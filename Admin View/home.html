@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="profile-icon">
+        <img src="images/profile.png" alt="User Icon">
+      </div>
+      <nav>
+        <a href="#" class="active">Home</a>
+        <a href="student.html">Student</a>
+        <a href="history.html">History</a>
+      </nav>
+      <button class="logout-btn">Log out</button>
+    </aside>
+
+    <main class="main-content">
+      <h1>Home</h1>
+      <div class="dashboard">
+        <div class="date-card">
+          <div class="month-year">
+            <span>August</span>
+            <span>2025</span>
+          </div>
+          <h2 class="day-number">25</h2>
+          <p class="day-name">Wednesday</p>
+        </div>
+
+        <div class="clock-card">
+          <h3>Clock</h3>
+          <div id="clock" class="clock-time">--:--:--</div>
+          <div class="clock-period" id="period">--</div>
+        </div>
+
+        <div class="attendance-chart">
+          <h3>Total Attendance</h3>
+          <canvas id="attendanceChart"></canvas>
+        </div>
+
+        <div class="today-card">
+          <h3>Total Attendance Today</h3>
+          <div class="donut"></div>
+          <div class="legend">
+            <span><span class="dot green"></span> Present</span>
+            <span><span class="dot yellow"></span> Late</span>
+            <span><span class="dot red"></span> Absent</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      let h = now.getHours();
+      const m = now.getMinutes().toString().padStart(2, '0');
+      const s = now.getSeconds().toString().padStart(2, '0');
+      const period = h >= 12 ? "PM" : "AM";
+      h = h % 12 || 12;
+      document.getElementById("clock").textContent = `${h}:${m}:${s}`;
+      document.getElementById("period").textContent = period;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>

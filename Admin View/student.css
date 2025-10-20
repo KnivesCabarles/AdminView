@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 195px;
+    background-color: #002855;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-icon {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden
+}
+
+.profile-icon img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.nav-menu {
+    flex: 1;
+}
+
+.nav-item {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 18px;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+.logout-btn {
+    margin-top: auto;
+    align-self: center;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 10px 20px;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 40px 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.date {
+    font-size: 14px;
+    color: #666;
+}
+
+.date span {
+    font-weight: 600;
+    color: #000;
+}
+
+.enroll-btn {
+    background-color: #1e73be;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.enroll-btn:hover {
+    background-color: #155a99;
+}
+
+.btn-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.table-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-table th {
+    padding: 16px 20px;
+    text-align: left;
+    background-color: #f5f5f5;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.student-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.student-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-present {
+    background-color: #4caf50;
+    color: white;
+}
+
+.badge-late {
+    background-color: #ffc107;
+    color: white;
+}
+
+.badge-absent {
+    background-color: #dc3545;
+    color: white;
+}
+
+.badge-mark {
+    background-color: #2196f3;
+    color: white;
+}
+
+.action-btn {
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+}
+
+.edit-btn {
+    background-color: #4caf50;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.action-btn img {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.close {
+    font-size: 32px;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1e73be;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn-cancel {
+    padding: 10px 24px;
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-cancel:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-submit {
+    padding: 10px 24px;
+    background-color: #1e73be;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-submit:hover {
+    background-color: #155a99;
+}
+.attendance-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.attendance-btn {
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    transition: opacity 0.3s;
+}
+
+.attendance-btn:hover {
+    opacity: 0.9;
+}
+
+.present-btn {
+    background-color: #4caf50;
+}
+
+.late-btn {
+    background-color: #ffc107;
+}
+
+.absent-btn {
+    background-color: #dc3545;
+}
